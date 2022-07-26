@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* reset */
+    body {margin: 0; padding: 0; box-sizing: border-box;}
+    ul {margin: 0; padding: 0; list-style-type: none;}
+    body > div {
+      width: 100vw;
+      min-height: 100vh;
+      background-color: #000;
+    }
+    /* header - header->aside->footer 정렬됨 -*/
+    body > div> header {
+      width: inherit;
+      height: 10vh;
+      background-color: #333;
+    }
+    /* li가 가로정렬되어 header안에 들어가있음(가로너비에 따라 위아래로 이동- */
+    body > div > header > nav > ul > li {
+      width: 200px;
+      background-color: #bbb;
+      display: inline-block;
+    }
+    /* main - main 안에 aside->article 순으로 배치됨*/
+    body > div > main {
+      height: 50vh;
+      background-color: #ddd;
+    }
+    /* main 안에 section 공간이 생김(안에 aside,article), 가로고정,세로반응형 */
+    body > div > main > section {
+      width: 90vh;
+      height: 30vh;
+      border: 1px dashed #111;
+      padding: 20px;
+    }
+    /* aside부분 규격사이즈 배경. 가로세로반응형 */
+    body > div > main > section > aside {
+      width: 30vw;
+      height: inherit;
+      background-color: #fff;
+      display: inline-block;
+    }
+    /* aricle부분 aside와 동일. 가로 길이에 따라 aside의 우or하 배치 */
+    body > div > main > section > article {
+      width: 30vw;
+      height: inherit;
+      background-color: blue;
+      color: salmon;
+      display: inline-block;
+    }
+    /* footer -div 안에 있음. 규격반응형. 맨 아래는 아님*/
+    body > div > footer {
+      height: 20vh;
+      background-color: cornflowerblue;
+    } 
+  </style>
+</head>
+<body>
+  <div>
+    <header>
+      <nav>
+        <ul>
+          <li>menu</li>
+          <li>menu</li>
+          <li>menu</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <aside>aside</aside>
+        <article>article</article>
+      </section>
+    </main>
+    <footer>맨 하단에 위치해야 할 것. top버튼, 저작권 표시 등</footer>
+  </div>
+</body>
+</html>
